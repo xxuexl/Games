@@ -1,5 +1,6 @@
 import "./Header.css";
 
+//Hay un template o se crea una nueva función con createElement.
 const template = () => `
   <img
     src="https://res.cloudinary.com/dq186ej4c/image/upload/v1682679162/header_giqdug.jpg"
@@ -25,8 +26,11 @@ const template = () => `
   </nav>
 `;
 
+/* 2 - Añadir los eventos con sus escuchadores(listeners) a los 
+elementos superiores */
 const addListeners = () => {};
 
+// 3 - Función que se exporta y que pinta
 export const PrintTemplateHeader = () => {
   document.querySelector("header").innerHTML = template();
   addListeners();
