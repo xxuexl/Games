@@ -56,13 +56,13 @@ export const setUser = (username) => {
   currentUser.name = username;
 };
 
-/*export const getUser = () => {
+export const getUser = () => {
   return currentUser;
-};+/
+};
 
 //! -------------------- SET y GET dataGlobal----------------
 
-/*export const setData = (data, page) => {
+export const setData = (data, page) => {
   switch (page) {
     case "Pokemon":
       dataGlobal.pokemon = data;
@@ -83,7 +83,7 @@ export const getData = (page) => {
   }
   return dataGlobal;
 };
-*/
+
 //! -------------------SET y GET  dde userData  --------------------------
 
 export const setUserData = (data) => {

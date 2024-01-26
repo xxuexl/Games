@@ -1,3 +1,6 @@
+import { getUser } from "../../global/state/globalState";
+import { changeColorRGB } from "../../utils";
+import { initControler } from "../../utils";
 import "./Header.css";
 
 //Hay un template o se crea una nueva función con createElement.
@@ -28,9 +31,38 @@ const template = () => `
 
 /* 2 - Añadir los eventos con sus escuchadores(listeners) a los 
 elementos superiores */
-const addListeners = () => {};
+const addListeners = () => {
+  //! -------------->COLOR CHANGE RANDOM------ evento click del boton de cambio de color
 
-// 3 - Función que se exporta y que pinta
+  const changeColor = document.getElementById("changeColor");
+  changeColor.addEventListener("click", (e) => {
+    const color = changeColorRGB();
+    document.body.style.background = color;
+  });
+
+  //! ---------------> DASHBOARD ----- evento click del boton que nos lleva a los juegos
+
+  const buttonDashboard = document.getElementById("buttonDashboard");
+  buttonDashboard.addEventListener("click", (e) => {
+    // llamamos al initController con el dashboard para que pinte la pagina del dashboard
+    initControler("Dashboard");
+  });
+
+  //! ----------------> LOGOUT ----------------
+  const buttonLogout = document.getElementById("buttonLogout");
+  buttonLogout.addEventListener("click", (e) => {
+    const userState = getUser().name;
+    const currentUser = localStorage.getItem(userState);
+    const parseCurrentUser = JSON.parse(currentUser);
+    const updateUser = { ...parseCurrentUser, token: false };
+    const stringUpdateUser = JSON.stringify(updateUser);
+    localStorage.removeItem(userState);
+    sessionStorage.removeItem("currentUser");
+    localStorage.setItem(userState, stringUpdateUser);
+
+    initControler("Login");
+  });
+};
 export const PrintTemplateHeader = () => {
   document.querySelector("header").innerHTML = template();
   addListeners();

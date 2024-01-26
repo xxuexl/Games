@@ -1,3 +1,5 @@
+//import { setUser, setUserData } from "../../global/state/globalState";
+
 import { setUser, setUserData } from "../../global/state/globalState";
 import { initControler } from "../../utils/route";
 import "./Login.css";
@@ -37,7 +39,7 @@ const addListeners = () => {
       setUser(`${valueInput}USER`);
       // y seteamos los datos del locaStorage en los datos de usuario logado con sus favoritos
       setUserData(parseUser);
-    } else {
+    } else if (valueInput) {
       /** en caso de no estar este usuario de antes registrado en el localStorage lo que hacemos es que lo crearemos
        * de cero con su array de fav vacio y el token en true y el nombre es el nomvre del input
        */
