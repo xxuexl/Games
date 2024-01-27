@@ -84,13 +84,15 @@ export const getData = (page) => {
   return dataGlobal;
 };
 
-//! -------------------SET y GET  dde userData  --------------------------
+//! -------------------SET y GET  de userData  --------------------------
 
 export const setUserData = (data) => {
+  //Creamos una función arrow.
   console.log(".....metiendo datos en el contexto");
-  userData.fav = data?.fav;
+  userData.fav = data?.fav; // Asignamos propiedades al objeto de userData.
   userData.name = data?.name;
   userData.token = data?.token;
+
   /**En este caso no solo setea sino que tambien lo modifica en el localStorage
    * Como se ve lo mete con una forma especial para que en caso de corresponder
    * el nombre que introduce en el login con el que hay en el localStorage se pueda
