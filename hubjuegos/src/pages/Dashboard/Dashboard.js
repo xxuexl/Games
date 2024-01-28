@@ -1,4 +1,4 @@
-import { initControler } from "../../utils";
+import { getInfo, initControler } from "../../utils";
 import "./Dashboard.css";
 
 const template = () => `
@@ -54,4 +54,7 @@ export const printTemplateDashboard = () => {
 
   /** metemos los escuchadores de la pagina */
   addEventListeners();
+
+  /** Se trae la info que hace la llamada asincrona a la api de pokemon y lo setea en el estado */
+  getInfo();
 };

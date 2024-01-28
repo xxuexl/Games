@@ -1,15 +1,26 @@
 import { getUserData, setUserData } from "../../global/state/globalState";
 import "./CardPokemons.css";
 
-export const CardsPokemons = (data) => {
-  const appUser = getUserData();
+/*-- El componente recibe un parámetro(data).Será un array de datos relacionados con Pkm*/
 
+export const CardsPokemons = (data) => {
+  /*-- Obtenemos los datos del usuario para saber cuáles son sus favoritos para posteriormente
+añadir el corazón en ellos*/
+
+  const appUser = getUserData();
   document.getElementById("galleryPokemon").innerHTML = "";
 
-  data.map((pokemon) => {
-    const classCustomType = `"figurePokemon ${pokemon.type[0].type.name}"`;
+  /*-- Con método "map" se recorre cada elemento del array "data", el cual tiene información sobre Pkm.
+Se crea una clase dinámica para cada uno de los tipos. */
 
-    //-- ${pokemon.type[0].type.name} Es la estructura de esa Poke Api por lo que hay que seguirla.
+  data.map((pokemon) => {
+    const classCustomType = `"figurePokemon ${pokemon.type[0].type.name}"`; //${pokemon.type[0].type.name} Estructura de Poke Api por lo que hay que seguirla.
+
+    /*-- Se crea un template HTML con un "figure" para cada Pkm que incluye su imagen,nombre y un corazón (botón "favorito").
+Por cada Pkm se genera un bloque de HTML(en este caso éste) con toda la información del Pkm.
+
+"favorite" tiene clase dinamica con un ternario. Si incluye "Pkm id" en fav. del¡ usuario --> 
+Se selecciona "like" - Luego en Css se les añade un corazón rojo a todos los que tengan like */
 
     const templateFigure = ` <figure class=${classCustomType} id=${pokemon.id}>
       <img src=${pokemon.image} alt=${pokemon.name} />
@@ -19,81 +30,70 @@ export const CardsPokemons = (data) => {
       }"> favorite </span>
     </figure>`;
 
-    //-- Por cada Pkm se genera un bloque de HTML(en este caso éste) con toda la información del Pkm.
+    /*-- Añade el contenido de templateFigure(que es un template string) al HTML del elemento DOM con 
+el ID galleryPokemon */
 
     document.getElementById("galleryPokemon").innerHTML += templateFigure;
-    /*--Añade el contenido de templateFigure(que es un template string) al HTML del elemento DOM con el ID
-    galleryPokemon */
 
-    /** ahora para que ese span sea clicable hay que darle su evento correspondiente por lo que
-     * llamamos a una funcion para meterle los eventos y le pasamos la data completa
-     */
+    /** Para que "span favorite" sea clicable hay que darle su evento correspondiente.
+Se crea una función para meter eventos y pasamos toda la data como param.*/
+
     addListeners(data);
   });
 };
+//?------------------------------------------------------------------------------------
+//-- Se traen los datos del usuario, especialmente sus favoritos.
 
 const addListeners = (data) => {
-  /** nos volvemos a traer los datos del usuario para saber sobretodo los fav que tiene en el array de id
-   * de sus pokemons favoritos
-   */
   const appUser = getUserData();
 
-  /** apuntamos a tods los span que son realmente los corazones. Los recorremos todos los span y le metemos
-   * el evento de tipo click
-   */
+  /*-- Se seleccionan todos los span(son los corazones). Se recorren todos y se añade
+el evento de tipo click*/
+
   const spanAll = document.querySelectorAll("span");
   spanAll.forEach((span) => {
     span.addEventListener("click", (e) => {
-      /** Y aqui hacemos un toggle, es decir si el corazon que clico es ya favorito lo quito de favorito
-       * si este no esta como favorito lo pongo como favorito
-       *
-       *
-       * Esto lo va a saber gracias al usuario que hay en el contesto y su array de fav ya que lo que hace en
-       * este if es comprobar que ese array de fav ver si incluye o no el id del padre del span el cual es el figure
-       * que recordar en el template metemos el id del pokemon como id del figure
-       */
+      /*-- La condición verifica si el elemento id del nodo padre de "span"
+(Este es el "figure" cuyo id es = id del pkm), está presente en el array de "appUser.fav" */
+
       if (appUser.fav.includes(e.target.parentNode.id)) {
-        /** Si lo incluye entonces tenemos que sacarlo del array para eso nos traemos de nuevo los datos del user
-         * logado del contexto para actualizar sus fav ( es decir el array con los id de los pokemon fav)
-         */
+        /**-- Si lo incluye se le saca del array. Primero se llaman los datos del usuario 
+para actualizar sus fav(array con los id de los pokm fav) */
+
         const appUser = getUserData();
 
+        /**-- Se crea nuevo array con todos los id de los pkmn favoritos menos
+el que queremos quitar como favorito */
+
         const newFavArray = [];
-        /** cremoa un array nuevo donde metermos todos los id de los pokemons que estaban como fav menos
-         * el que queremos quitar como favorito
-         */
+
         appUser.fav.forEach((id) => {
           if (e.target.parentNode.id != id) newFavArray.push(id);
         });
 
-        /** y una vez creado el nuevo array de fav lo que vamos a hacer es con la funcion set del estado
-         * meter este nuevo array en el contexto, en los datos del usuario, y esta funcion
-         * los meterá en el localStorage actualizados
-         *
-         * Para esto hacemos una copia de lo que teniamos con un spread operator y despues modificamos la clave
-         * fav y le metemos como valor el nuevo array sin el elemento que hemos quitado de fav que es el id del figure el cual
-         * es padre del span que corresponde con el corazon
-         */
+        /**-- Tras crear el "newFavArray", se añadirá a la función "setUserData", junto a los datos del usuario(appUser).
+1ª Se hace una copia con "spread operator". 2º A clave "fav" le metemos como valor newFavArray solo.
+La función "setUserData" los transferirá al localStorage.
+
+Luego se crea un toggle, si el corazon que se clica es ya favorito, se quita.
+Si no es favorito, se convierte en favorito*/
+
         setUserData({
           ...appUser,
           fav: newFavArray,
         });
-
-        /** inportante a ese span quitarle la clase like para asi se le quite el rojo */
         span.classList.toggle("like");
       } else {
-        /** En caso de no incluir ese id en el arrray de fav del user logado del contesto lo que tenemos que hacer es meter el id de ese figire
-         * en el array de fav de los datos de usuario del contesto y de nuevo utilizamos la funcion de set para modificar el estado
-         */
         const appUser = getUserData();
         appUser.fav.push(e.target.parentNode.id);
         setUserData(appUser);
 
-        /** En este caso metemos la clase like al elemento que hemos hecho fav, recordar que el metodo toggle lo hace solo el quitar o poner la clase
-         * en caso de que la tenga o no
-         */
         span.classList.toggle("like");
       }
     });
   });
 };
+
+/*-- Este código define el componente *`CardsPokemons`* que recibe un array de datos 
+"data" relacionados con Pokémon.
+Renderiza las tarjetas/cards correspondientes a esos Pokémon */
