@@ -6,7 +6,7 @@ import "./WackaTopo.css";
 /* Ésto es el HTML template del DOM, es nuestra base. Se encuentran los elementos principales como "Ids,buttons,holes,score etc..."-
 En el contenedor "div" se establece el juego con todos los hoyos.*/
 const template = () => `
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
     <div class="game-info"> 
         <h1>Let's hit all the moles!</h1>
         <div id="score">Score: 0</div> 
