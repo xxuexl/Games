@@ -7,18 +7,62 @@
 } 
 
 #startButton { 
-	margin-bottom: 20px; 
-	padding: 10px; 
-	font-size: 16px; 
-	cursor: pointer; 
-} 
+    display: block;
+    padding: 10px 25px;
+    margin-top: 20px;
+    font-size: 19px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+#startButton:hover {background-color: #3e8e41}
+
+#startButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+}
+
+#startButton:disabled {
+    background-color: #595c59;
+    box-shadow: 0 0;
+    cursor: not-allowed;
+}
 
 #endButton { 
-	margin-bottom: 20px; 
-	padding: 10px; 
-	font-size: 16px; 
-	cursor: pointer; 
-} 
+    display: block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+#endButton:hover {background-color: #3e8e41}
+
+#endButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+}
+
+#endButton:disabled {
+    background-color: #595c59;
+    box-shadow: 0 0;
+    cursor: not-allowed;
+}
 
 .game-container { 
     background-image: url("https://img.freepik.com/premium-vector/archeology-bones-soil-layers-buried-fossil-animals-dinosaur-skeleton-bone-dirt-underground-clay-layer-vector-illustration_102902-531.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699228800&semt=ais");
