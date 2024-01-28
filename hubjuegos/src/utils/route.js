@@ -1,7 +1,13 @@
 import { getUser } from "../global/state/globalState";
-import { Login, PrintPokemonPage, printTemplateDashboard } from "../pages";
+import {
+  Login,
+  PrintPokemonPage,
+  printTemplateDashboard,
+  PrintWackaTopoPage,
+} from "../pages";
 
 export const initControler = (pagesRender) => {
+  console.log(pagesRender);
   switch (pagesRender) {
     // --> Si no hay User en este caso pinta el login
     case undefined:
@@ -14,8 +20,8 @@ export const initControler = (pagesRender) => {
     case "Dashboard":
       printTemplateDashboard();
       break;
-    case "Topo":
-      "Topo()";
+    case "WackaTopo":
+      PrintWackaTopoPage();
       break;
     case "Login":
       Login();

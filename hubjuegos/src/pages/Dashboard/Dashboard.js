@@ -14,7 +14,7 @@ const template = () => `
         </figure>
       </li>
       <li>
-        <figure>
+        <figure id="navigateWackaTopo">
           <img
             src="https://res.cloudinary.com/dq186ej4c/image/upload/v1689761641/pngwing.com_1_iq8zfk.png"
             alt=" go to wacka topo game"
@@ -42,6 +42,11 @@ const addEventListeners = () => {
   const navigatePokemon = document.getElementById("navigatePokemon");
   navigatePokemon.addEventListener("click", () => {
     initControler("Pokemon");
+  });
+
+  const navigateWackaTopo = document.getElementById("navigateWackaTopo");
+  navigateWackaTopo.addEventListener("click", () => {
+    initControler("WackaTopo");
   });
 };
 
