@@ -1,7 +1,10 @@
-import { PrintTemplateSpinner, PrintSpinner } from "../../components";
+// Se importan los datos del archivo CSS.
+
 import "./WackaTopo.css";
 
-//? ------------------------------TEMPLATE INICIAL--------------------------------
+//? -----------------------TEMPLATE INICIAL--------------------------------
+// Ésto es el HTML template del DOM, es nuestra base.
+
 const template = () => `
     <h1>¡Vamos a por todos los topos!</h1>
     <div class="game-info"> 
@@ -22,7 +25,16 @@ const template = () => `
         <div class="hole" id="hole9"></div> 
     </div>`;
 
-document.addEventListener("DOMContentLoaded", function () {
+//?---1---------CREACIÓN DE LA FUNCIÓN PRINCIPAL DEL JUEGO------------------------------------------
+// Se crea la arrow función principal que contiene varias funciones para hacer funcionar el juego.
+const runGame = () => {
+  //?---2---------Creación de nuevas variables que se emplearán posteriormente-------------------------
+  /*Se crean variables de cada elemento del HTML template superior, para
+convertirlos en representaciones de JS, para poder interactuar con ellos. 
+    
+Con "getElementById" se obtiene el elemento del template.
+Con "querySelectorAll" se obtienen TODOS los elementos con la class ".hole" */
+
   const holes = document.querySelectorAll(".hole");
   const startButton = document.getElementById("startButton");
   const endButton = document.getElementById("endButton");
@@ -33,11 +45,24 @@ document.addEventListener("DOMContentLoaded", function () {
   let score = 0;
   let countdown;
   let moleInterval;
+  let gameOver = true; // El estado inicial será "Game Over"
 
-  // Set the initial state to game over
-  let gameOver = true;
+  //?---3----------Creación de Función 1---------------------------------------------------------------------------
+  /* Se crea una función para recorrer cada "hole"/agujero.
+    Se accede a la clase de "hole" para eliminar la representación de "mole"(en CSS es una img) con el método "remove".
 
-  function comeout() {
+    Con el método "removeEventListener", le doy la instrucción de:
+    Al hacer "click" en el elemento "hole"(el cual tiene 9 representaciones), elimina el "mole"/topo.
+    */
+  const comeout = () => {
+    const handleMoleClick = () => {
+      if (!gameOver) {
+        score++;
+        scoreDisplay.textContent = `Score: ${score}`;
+      }
+      this.classList.remove("mole");
+    };
+
     holes.forEach((hole) => {
       hole.classList.remove("mole");
       hole.removeEventListener("click", handleMoleClick);
@@ -47,17 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     random.classList.add("mole");
     random.addEventListener("click", handleMoleClick);
-  }
-
-  function handleMoleClick() {
-    if (!gameOver) {
-      score++;
-      scoreDisplay.textContent = `Score: ${score}`;
-    }
-    this.classList.remove("mole");
-  }
-
-  function startGame() {
+  };
+  //?---4------------Creación de Función 2------------------------------------------------------------------------
+  const startGame = () => {
     if (!gameOver) {
       // Prevent starting the game
       // again if it's already in progress
@@ -66,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gameOver = false;
     score = 0;
+    console.log(scoreDisplay);
     scoreDisplay.textContent = `Score: ${score}`;
     timer = 60;
     timerDisplay.textContent = `Time: ${timer}s`;
@@ -91,9 +109,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
 
     console.log("Game started");
-  }
+  };
 
-  function endGame() {
+  //?---5------------Creación de Función 3---------------------------------------------------------------------
+  const endGame = () => {
     clearInterval(countdown);
     clearInterval(moleInterval);
     gameOver = true;
@@ -104,19 +123,25 @@ document.addEventListener("DOMContentLoaded", function () {
     timerDisplay.textContent = `Time: ${timer}s`;
     startButton.disabled = false;
     endButton.disabled = true;
-  }
+  };
 
-  startButton.addEventListener("click", startGame);
-  endButton.addEventListener("click", endGame);
-});
+  //? ---6-------------Creación de eventos-----------------------------------------------------------------
+  /** Se crea una nueva constante que representa los eventos. Se crea una variable para cada "Button"
+     para poder añadir en ellos los eventos. Se adquieren del DOM con "getElementById" */
 
-//? ---------------------FUNCION QUE SE EXPORTA QUE PINTA LA PAGINA--------------
+  const addEventListeners = () => {
+    const startButton = document.getElementById("startButton");
+    const endButton = document.getElementById("endButton");
+    startButton.addEventListener("click", startGame);
+    endButton.addEventListener("click", endGame);
+  }; //Cuando se cliquea empieza o para el juego.
+
+  addEventListeners();
+};
+
+//? ---7-----------FUNCION QUE SE EXPORTA QUE PINTA LA PAGINA-----------------------------------------------
 export const PrintWackaTopoPage = () => {
   document.querySelector("main").innerHTML = template();
-  /** primero pintamos los spinner y luego llamamos a la funcion de dataService que trae los datos de las funciones
-   * que se encargan dee gestionar la asincronia y de procesar los datos
-   */
-  //PrintTemplateSpinner();
-  //PrintSpinner();
-  //dataService();
+
+  runGame();
 };
