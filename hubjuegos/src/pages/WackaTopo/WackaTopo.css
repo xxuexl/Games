@@ -21,47 +21,38 @@
 } 
 
 .game-container { 
-	background-color: rgb(1, 254, 64); 
-	display: grid; 
-	grid-template-columns: repeat(3, 160px); 
-	gap: 10px; 
-	border: 2px solid rgb(216, 216, 216); 
+    background-image: url("https://img.freepik.com/premium-vector/archeology-bones-soil-layers-buried-fossil-animals-dinosaur-skeleton-bone-dirt-underground-clay-layer-vector-illustration_102902-531.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699228800&semt=ais");
+	background-repeat: no-repeat;
+    background-size:120%;
+    background-position: 0px -105px;
+    display: grid; 
+    width: 43% ;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    justify-content: center;
+	grid-template-columns: repeat(3, 150px); 
+	gap: 20px; 
+	border: 10px solid rgb(192, 101, 9); 
 	padding: 20px; 
-	border-radius: 10px; 
+	border-radius: 40px; 
 
 } 
 
 .hole { 
-	height: 150px; 
-	background: rgb(19, 55, 139); 
-	border: 5px solid rgb(30, 30, 30); 
+	height: 124px; 
+	background-image: url("https://static.vecteezy.com/system/resources/previews/023/669/387/non_2x/big-hole-in-ground-brown-dry-soil-and-mine-element-of-desert-landscape-cartoon-illustration-vector.jpg"); 
+	background-size: 200px 174px ;
+    background-position: -15px -40px;
+    background-repeat: no-repeat;
+    border: 5px; 
 	cursor: pointer; 
 	border-radius: 100px; 
 } 
 
 .mole { 
-	background-size: 150px; 
+	background-size: 170px 140px;
+    background-position: -10px -9px;
+    background-repeat: no-repeat ; 
 	background-image: url( 
-	"https://media.geeksforgeeks.org/wp-content/uploads/20231130123541/mole.png") 
+	"https://www.pngkey.com/png/full/102-1024269_mole-hole-cartoon.png") 
 } 
-
-@media only screen and (max-width: 600px) { 
-	.game-container { 
-		width: 100%; 
-		gap: 10px; 
-		padding: 5%; 
-		grid-template-columns: repeat(3, 38%); 
-	} 
-
-	.hole { 
-		height: 50px; 
-		width: 50px; 
-		border-radius: 100px; 
-	} 
-
-	.mole { 
-		background-size: 50px; 
-		background-image: url( 
-"https://media.geeksforgeeks.org/wp-content/uploads/20231130123541/mole.png") 
-	} 
-}
