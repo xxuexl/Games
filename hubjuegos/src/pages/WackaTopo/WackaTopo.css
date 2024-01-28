@@ -1,42 +1,67 @@
-/*Pokemon.css -----> src/pages/Pokemon/Pokemon.css*/
-#galleryPokemon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-  
-  #containerFilter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0 0 1rem 0;
-  }
-  
-  #inputPokemon {
-    width: 300px;
-    height: 2rem;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  #spinner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #paginacion {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0 3rem 0;
-    gap: 0.5rem;
-    & button {
-      width: 30px;
-      height: 30px;
-      border-radius: 5px;
-    }
-  }
+.game-info { 
+	display: flex; 
+	flex-direction: column; 
+	align-items: center; 
+	justify-content: center; 
+	margin: 20px; 
+} 
+
+#startButton { 
+	margin-bottom: 20px; 
+	padding: 10px; 
+	font-size: 16px; 
+	cursor: pointer; 
+} 
+
+#endButton { 
+	margin-bottom: 20px; 
+	padding: 10px; 
+	font-size: 16px; 
+	cursor: pointer; 
+} 
+
+.game-container { 
+	background-color: rgb(1, 254, 64); 
+	display: grid; 
+	grid-template-columns: repeat(3, 160px); 
+	gap: 10px; 
+	border: 2px solid rgb(216, 216, 216); 
+	padding: 20px; 
+	border-radius: 10px; 
+
+} 
+
+.hole { 
+	height: 150px; 
+	background: rgb(19, 55, 139); 
+	border: 5px solid rgb(30, 30, 30); 
+	cursor: pointer; 
+	border-radius: 100px; 
+} 
+
+.mole { 
+	background-size: 150px; 
+	background-image: url( 
+	"https://media.geeksforgeeks.org/wp-content/uploads/20231130123541/mole.png") 
+} 
+
+@media only screen and (max-width: 600px) { 
+	.game-container { 
+		width: 100%; 
+		gap: 10px; 
+		padding: 5%; 
+		grid-template-columns: repeat(3, 38%); 
+	} 
+
+	.hole { 
+		height: 50px; 
+		width: 50px; 
+		border-radius: 100px; 
+	} 
+
+	.mole { 
+		background-size: 50px; 
+		background-image: url( 
+"https://media.geeksforgeeks.org/wp-content/uploads/20231130123541/mole.png") 
+	} 
+}
