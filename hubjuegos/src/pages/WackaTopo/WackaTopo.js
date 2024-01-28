@@ -25,7 +25,7 @@ const template = () => `
         <div class="hole" id="hole9"></div> 
     </div>`;
 
-//?---1---------CREACIÓN DE LA FUNCIÓN PRINCIPAL DEL JUEGO-----------------------------------------------
+//?-----1---------CREACIÓN DE LA FUNCIÓN PRINCIPAL DEL JUEGO-----------------------------------------------
 // Se crea la función arrow principal que contiene varias funciones para hacer funcionar el juego.
 const runGame = () => {
   //?---2---------Creación de nuevas variables que se emplearán posteriormente---------------------------
@@ -47,22 +47,25 @@ Con "querySelectorAll" se obtienen TODOS los elementos con la class ".hole" */
   let moleInterval;
   let gameOver = true; // El estado inicial será "Game Over"
 
-  //?---3----------Creación de Función 1------------------------------------------------------------------
-
-  const comeout = () => {
-    /* Se declara una nueva función arrow con una condición:
+  //?----3----------Creación de Función 1------------------------------------------------------------------
+  /* Se declara una nueva función (no arrow function, ya que tiene la limitación de no poder usarse con this) con una condición:
 Si el juego no ha finalizado, aumentar el "score" de "scoreDisplay" que fue previamente declarado, gracias a
 un Template String con "score".
 En la última línea se indica que elimine la clase "mole"/topo del objeto actual ("hole") */
-    const handleMoleClick = () => {
-      if (!gameOver) {
-        score++;
-        scoreDisplay.textContent = `Score: ${score}`;
-      }
-      this.classList.remove("mole"); //"this" corresponde al elemento que está relacionado
-      //con el EventListener(abajo), el cual es "hole".
-    };
 
+  function handleMoleClick() {
+    if (!gameOver) {
+      console.log(`score increasing`);
+      score++;
+      console.log(`score increased to ${score}`);
+      scoreDisplay.textContent = `Score: ${score}`;
+    }
+    this.classList.remove("mole"); //"this" corresponde al elemento que está relacionado con el objeto que llama a la función,
+    //con el EventListener(abajo), el cual es "hole".
+  }
+
+  //?-----4------------Creación de Función 2----------------------------------------------------------------------
+  const comeout = () => {
     /* Se crea una función para recorrer cada "hole"/agujero.
     Se accede a todos los elementos con clase "hole" para eliminar la representación de "mole"(en CSS es una img) con el método "remove".
 
@@ -84,7 +87,7 @@ En la última línea se indica que elimine la clase "mole"/topo del objeto actua
     /*Se adjunta un "EventListener" para que cuando "mole" aparezca se pueda hacer click en él.
 Debido a "handleMoleClick" se incrementará el score y el "mole" desaparecerá. */
   };
-  //?---4------------Creación de Función 2----------------------------------------------------------------------
+  //?----5------------Creación de Función 3----------------------------------------------------------------------
   //Se crea una función para empezar el juego cuando se cliquea en el botón
 
   const startGame = () => {
@@ -127,7 +130,7 @@ El botón de empezar el juego se bloqueará y el botón de acabar el juego se ha
     console.log("Game started");
   };
 
-  //?---5------------Creación de Función 3---------------------------------------------------------------------
+  //?----6------------Creación de Función 4---------------------------------------------------------------------
   /* Se crea una función para cuando el juego termina. Con la función global(método) "clearInterval" para el temporizador y la
 aparición del topo. Al mismo tiempo aparece una alerta con un mensaje
 Se resetean "score" y "timer". Se establecen de nuevo los valores de las las referencias al DOM y se habilitan y deshabilitan los botones*/
@@ -145,7 +148,7 @@ Se resetean "score" y "timer". Se establecen de nuevo los valores de las las ref
     endButton.disabled = true;
   };
 
-  //? ---6-------------Creación de eventos-----------------------------------------------------------------
+  //? ---7-------------Creación de eventos-----------------------------------------------------------------
   /** Se crea una nueva constante que representa los eventos. Se crea una variable para cada "Button"
      para poder añadir en ellos los eventos. Se adquieren del DOM con "getElementById" */
 
@@ -159,7 +162,7 @@ Se resetean "score" y "timer". Se establecen de nuevo los valores de las las ref
   addEventListeners(); // Hace funcionar el código.
 };
 
-//? ---7-----------FUNCION QUE SE EXPORTA QUE PINTA LA PAGINA-----------------------------------------------
+//? ----8-----------FUNCION QUE SE EXPORTA QUE PINTA LA PAGINA-----------------------------------------------
 /* Permite exportar esta función arrow.
 Inyecta el template inicial de este juego al elemento "main" del DOM */
 export const PrintWackaTopoPage = () => {
