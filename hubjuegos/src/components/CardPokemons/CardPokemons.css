@@ -10,7 +10,7 @@
     margin: 1rem;
   
     & img {
-      height: 180px;
+      height: 170px;
       width: 180px;
       animation: rebota 1.5s alternate infinite ease-in;
       transition: all 1s ease-in-out;
@@ -23,7 +23,7 @@
   
   @keyframes rebota {
     100% {
-      transform: translateX(10px);
+      transform: translateX(8px);
     }
   }
   
@@ -35,112 +35,112 @@
   }
   
   figure.bug {
-    border: 10px ridge #8fc12c;
+    border: 10px ridge #c6d409;
   }
   .bug {
-    background-color: #8fc12c80;
+    background-color: #e3f60980;
   }
   
   figure.dark {
-    border: 10px solid #5a5366;
+    border: 10px ridge #5a5366;
   }
   .dark {
     background-color: #5a536687;
   }
   figure.dragon {
-    border: 10px solid #0a6dc4;
+    border: 10px ridge #032b4e;
   }
   .dragon {
-    background-color: #0a6dc482;
+    background-color: #15497782;
   }
   figure.electric {
-    border: 10px solid #f3d13b;
+    border: 10px ridge #e3e014;
   }
   .electric {
-    background-color: #f3d13b75;
+    background-color: #ceec0c75;
   }
   
   figure.fairy {
-    border: 10px solid #ec8fe6;
+    border: 10px ridge #ec8fe6;
   }
   .fairy {
-    background-color: #ec8fe67e;
+    background-color: #ee4ef77e;
   }
   figure.fighting {
-    border: 10px solid #ce4068;
+    border: 10px ridge #ce4068;
   }
   .fighting {
-    background-color: #ce406884;
+    background-color: #da547a84;
   }
   
   figure.fire {
-    border: 10px solid #ff9b54;
+    border: 10px ridge #df460f;
   }
   .fire {
-    background-color: #ff9b546f;
+    background-color: #da1e066f;
   }
   
   figure.flying {
-    border: 10px solid #8fa8dd;
+    border: 10px ridge #8fa8dd;
   }
   .flying {
     background-color: #8fa8dd7c;
   }
   figure.ghost {
-    border: 10px solid #5269ac;
+    border: 10px ridge #7005cd;
   }
   .ghost {
-    background-color: #5269ac7e;
+    background-color: #5518877e;
   }
   
   figure.ground {
-    border: 10px solid #d97746;
+    border: 10px ridge #b15223;
   }
   .ground {
-    background-color: #d977467c;
+    background-color: #90441e7c;
   }
   figure.ice {
-    border: 10px solid #74cec1;
+    border: 10px ridge #17a18d;
   }
   .ice {
-    background-color: #74cec17e;
+    background-color: #1ef1d27e;
   }
   figure.normal {
-    border: 10px solid #9099a1;
+    border: 10px ridge #b0cae1;
   }
   .normal {
-    background-color: #9099a17b;
+    background-color: #9aa6b17b;
   }
   
   figure.poison {
-    border: 10px solid #aa6ac8;
+    border: 10px ridge #3c0e51;
   }
   .poison {
-    background-color: #aa6ac87a;
+    background-color: #4422537a;
   }
   
   figure.psychic {
-    border: 10px solid #f97176;
+    border: 10px ridge #ee787c;
   }
   .psychic {
-    background-color: #f971767e;
+    background-color: #914b4c7e;
   }
   figure.rock {
-    border: 10px solid #c7b78b;
+    border: 10px ridge #cf9669;
   }
   .rock {
-    background-color: #c7b78b78;
+    background-color: #b7a36b78;
   }
   
   figure.steel {
-    border: 10px solid #5a8ea1;
+    border: 10px ridge #a9b5b9;
   }
   .steel {
     background-color: #5a8ea17e;
   }
   figure.water {
-    border: 10px solid #4d91d5;
+    border: 10px ridge #0575e6;
   }
   .water {
-    background-color: #4d91d575;
+    background-color: #5294d575;
   }
