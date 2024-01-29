@@ -6,8 +6,9 @@ import "./Login.css";
 const template = () => `
   <div id="containerLogin">
     <h1 id="titleLogin">LOGIN</h1>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
     <input type="text" name="username" id="username" />
-    <button id="buttonLogin">enviar</button>
+    <button id="buttonLogin">Submit</button>
   </div>
 `;
 
