@@ -5,8 +5,9 @@ import "./Header.css";
 
 //Hay un template o se crea una nueva función con createElement.
 const template = () => `
+  <h2>Welcome to my little world! 🐹</h2>
   <img
-    src="https://res.cloudinary.com/dq186ej4c/image/upload/v1682679162/header_giqdug.jpg"
+    src="https://www.pngall.com/wp-content/uploads/14/Cute-No-Background.png"
     alt="title hub game website (app)"
     class="logo"
   />

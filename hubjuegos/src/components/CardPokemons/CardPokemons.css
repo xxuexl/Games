@@ -77,7 +77,7 @@
     border: 10px ridge #df460f;
   }
   .fire {
-    background-color: #da1e066f;
+    background-color: #e1101098;
   }
   
   figure.flying {
@@ -106,10 +106,10 @@
     background-color: #1ef1d27e;
   }
   figure.normal {
-    border: 10px ridge #b0cae1;
+    border: 10px ridge #70869a;
   }
   .normal {
-    background-color: #9aa6b17b;
+    background-color: #afb3b8a0;
   }
   
   figure.poison {

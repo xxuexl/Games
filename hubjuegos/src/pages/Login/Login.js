@@ -25,19 +25,19 @@ const addListeners = () => {
      * en el local con datos dee algun usuario con el mismo nombre
      * y asi lo asocia para coger los me gusta de los pokemon
      */
-    if (localStorage.getItem(`${valueInput}USER`)) {
-      const localUser = localStorage.getItem(`${valueInput}USER`);
+    if (localStorage.getItem(`${valueInput}`)) {
+      const localUser = localStorage.getItem(`${valueInput}`);
       const parseUser = JSON.parse(localUser);
 
       // importante es que si me logo es poner el token de autenticacion como true
       parseUser.token = true;
 
       const stringUser = JSON.stringify(parseUser);
-      localStorage.setItem(`${valueInput}USER`, stringUser);
-      sessionStorage.setItem("currentUser", `${valueInput}USER`);
+      localStorage.setItem(`${valueInput}`, stringUser);
+      sessionStorage.setItem("currentUser", `${valueInput}`);
 
       // y llamamos a la funcion dee set del user logado actual
-      setUser(`${valueInput}USER`);
+      setUser(`${valueInput}`);
       // y seteamos los datos del locaStorage en los datos de usuario logado con sus favoritos
       setUserData(parseUser);
     } else if (valueInput) {
@@ -52,11 +52,11 @@ const addListeners = () => {
 
       // lo metemos al localStorage añadiendole USER despues del nombre  y lo metemos al session como el currentUser de la app
       const stringUser = JSON.stringify(customUser);
-      localStorage.setItem(`${valueInput}USER`, stringUser);
-      sessionStorage.setItem("currentUser", `${valueInput}USER`);
+      localStorage.setItem(`${valueInput}`, stringUser);
+      sessionStorage.setItem("currentUser", `${valueInput}`);
 
       // seteamos el nombre en su estado asi como los datos del usaurio en el segundo estado customUser
-      setUser(`${valueInput}USER`);
+      setUser(`${valueInput}`);
       setUserData(customUser);
     }
 

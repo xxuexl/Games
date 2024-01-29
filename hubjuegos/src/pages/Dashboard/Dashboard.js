@@ -22,15 +22,6 @@ const template = () => `
           <h2>WACKA TOPO</h2>
         </figure>
       </li>
-      <li>
-        <figure>
-          <img
-            src="https://res.cloudinary.com/dq186ej4c/image/upload/v1689761735/6168776_kfna36.png"
-            alt="go to memory game"
-          />
-          <h2>MEMORY GAME</h2>
-        </figure>
-      </li>
     </ul>
   </div>
 `;
