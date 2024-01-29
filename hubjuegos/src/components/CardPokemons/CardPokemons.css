@@ -12,7 +12,7 @@
     & img {
       height: 180px;
       width: 180px;
-      animation: rebota 1s alternate infinite ease-in;
+      animation: rebota 1.5s alternate infinite ease-in;
       transition: all 1s ease-in-out;
     }
   }
@@ -23,19 +23,19 @@
   
   @keyframes rebota {
     100% {
-      transform: translateY(5px);
+      transform: translateX(10px);
     }
   }
   
   .grass {
-    background-color: #63bb5b75;
+    background-color: #4feb4175;
   }
   figure.grass {
-    border: 10px solid #63bb5b;
+    border: 10px ridge #0e8d03;
   }
   
   figure.bug {
-    border: 10px solid #8fc12c;
+    border: 10px ridge #8fc12c;
   }
   .bug {
     background-color: #8fc12c80;

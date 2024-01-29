@@ -17,7 +17,7 @@ const template = () => `
         <figure id="navigateWackaTopo">
           <img
             src="https://res.cloudinary.com/dq186ej4c/image/upload/v1689761641/pngwing.com_1_iq8zfk.png"
-            alt=" Go to whacka topo game"
+            alt="go to wacka topo game"
           />
           <h2>WACKA TOPO</h2>
         </figure>
