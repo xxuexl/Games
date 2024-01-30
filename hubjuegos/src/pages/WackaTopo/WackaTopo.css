@@ -78,8 +78,7 @@ h1 {
 .game-container { 
     background-image: url("https://img.freepik.com/premium-vector/archeology-bones-soil-layers-buried-fossil-animals-dinosaur-skeleton-bone-dirt-underground-clay-layer-vector-illustration_102902-531.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699228800&semt=ais");
 	background-repeat: no-repeat;
-    background-size:160%;
-    background-position: 0px -105px;
+    background-size:cover;
     display: grid; 
     margin-top: 20px;
     margin-bottom: 10px;
@@ -89,8 +88,14 @@ h1 {
 	border: 10px solid rgb(192, 101, 9); 
 	padding: 20px; 
 	border-radius: 40px; 
-
 } 
+
+@media (max-width: 600px) {
+    .game-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+    
 
 .hole { 
 	height: 124px; 
