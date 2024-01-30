@@ -16,6 +16,12 @@
       transition: all 1s ease-in-out;
     }
   }
+
+  .pokemonname {
+    color: #100f0f;
+    font-style:italic;
+    padding-top: 6px;
+  }
   
   .like {
     color: red;
@@ -29,11 +35,6 @@
   
   .grass {
     background-color: #4feb4175;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 17px;
-    font-style: oblique;
-    text-align:40px;
-   
   }
   figure.grass {
     border: 10px ridge #0e8d03;

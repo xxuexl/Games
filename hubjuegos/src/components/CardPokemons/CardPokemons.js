@@ -24,7 +24,7 @@ Se selecciona "like" - Luego en Css se les añade un corazón rojo a todos los q
 
     const templateFigure = ` <figure class=${classCustomType} id=${pokemon.id}>
       <img src=${pokemon.image} alt=${pokemon.name} />
-      <h2>${pokemon.name}</h2>
+      <h2 class="pokemonname">${pokemon.name}</h2>
       <span class="material-symbols-outlined  ${
         appUser.fav.includes(pokemon.id.toString()) ? "like" : ""
       }"> favorite </span>
