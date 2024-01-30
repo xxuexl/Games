@@ -1,3 +1,9 @@
+@media (min-width: 320px) and (max-width: 479px) {
+    .box{
+     background-color: antiquewhite;
+     width: 300px;
+    }
+}
 .game-info { 
 	display: flex; 
 	flex-direction: column; 
@@ -90,11 +96,11 @@ h1 {
 	border-radius: 40px; 
 } 
 
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {
     .game-container {
         grid-template-columns: repeat(2, 1fr); 
-    }
-}
+    } */
+
     
 
 .hole { 

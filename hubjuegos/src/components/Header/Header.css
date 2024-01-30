@@ -6,8 +6,6 @@ h2 {
   font-family:cursive;
 }
 
-
-
 header {
     height: 10vh;
     display: flex;
@@ -39,7 +37,7 @@ header {
     & .logo {
       width: 130px;
       height: 100%;
- 
+      margin-left: 60px;
       object-fit: cover;
       @media (max-width: 600px) {
         width: 30vw;

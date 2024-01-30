@@ -21,7 +21,7 @@ export const runGame = () => {
   let moleInterval;
   let gameOver = true; // El estado inicial será "Game Over"
 
-  //?----3----------Creación de Función 1------------------------------------------------------------------
+  //?----3----------Creación de Función 1 Score increment-----------------------------------------------------------------
   /* Se declara una nueva función con el parám. "event" con una condición:
   Si el juego no ha finalizado, aumentar el "score" de "scoreDisplay", gracias a
   un Template String con "score".
@@ -44,7 +44,7 @@ export const runGame = () => {
   Con "classList" se elimina con el método "remove" la clase "mole" del elemento
   en el que se registró el evento. */
 
-  //?-----4------------Creación de Función 2----------------------------------------------------------------------
+  //?-----4------------Creación de Función 2 Mole out--------------------------------------------------------------------
   const comeout = () => {
     /* Se crea una función para recorrer cada "hole"/agujero.
       Se accede a todos los elementos con clase "hole" para eliminar la representación de "mole"(en CSS es una img) 
@@ -68,7 +68,7 @@ export const runGame = () => {
     /*Se adjunta un "EventListener" para que cuando "mole" aparezca se pueda hacer click en él.
   Debido a "handleMoleClick" se incrementará el score y el "mole" desaparecerá. */
   };
-  //?----5------------Creación de Función 3----------------------------------------------------------------------
+  //?----5------------Creación de Función 3 Start Game----------------------------------------------------------------------
   //Se crea una función para empezar el juego cuando se cliquea en el botón.
 
   const startGame = () => {
@@ -113,7 +113,7 @@ export const runGame = () => {
     console.log("Game started");
   };
 
-  //?----6------------Creación de Función 4---------------------------------------------------------------------
+  //?----6------------Creación de Función 4 End Game---------------------------------------------------------------------
   /* Se crea una función para cuando el juego termine con la función global(método) "clearInterval" para 
   el temporizador y la aparición del topo. Al mismo tiempo aparece una alerta con un mensaje.
   Se resetean "score" y "timer". Se establecen de nuevo los valores de las las referencias al DOM y 
