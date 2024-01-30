@@ -2,8 +2,10 @@
 Estilos Css anidados.*/
 
 h2 {
-  color: white;
+  color: rgb(136, 45, 221);
+  font-family:cursive;
 }
+
 
 
 header {
@@ -35,9 +37,9 @@ header {
       }
     }
     & .logo {
-      width: 20vw;
+      width: 130px;
       height: 100%;
-      margin-left: 29px;
+      margin-left: 60px;
       object-fit: cover;
       @media (max-width: 600px) {
         width: 30vw;

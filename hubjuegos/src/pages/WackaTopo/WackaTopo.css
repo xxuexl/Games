@@ -8,6 +8,8 @@
 
 h1 {
     font-family: "Allerta Stencil", Sans-serif;
+    color: #41089c;
+    word-spacing: normal;
 }
 
 #score, #timer {
@@ -34,7 +36,7 @@ h1 {
 #startButton:hover {background-color: #3e8e41}
 
 #startButton:active {
-  background-color: #3e8e41;
+  background-color: #46e94c;
   box-shadow: 0 5px #666;
 }
 
@@ -63,7 +65,7 @@ h1 {
 #endButton:hover {background-color: #3e8e41}
 
 #endButton:active {
-  background-color: #3e8e41;
+  background-color: #36d93c;
   box-shadow: 0 5px #666;
 }
 

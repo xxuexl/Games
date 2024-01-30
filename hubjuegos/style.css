@@ -19,8 +19,8 @@
   }
   & body {
     transition: ease-in-out 0.2s;
-    background: #6d2dc6;
-    background: linear-gradient(to right, #f06ef0, #08f5dd);
+    background: #5b18b8;
+    background: linear-gradient(to right, #f06ef0, #04e6d0);
   }
 
   & header {

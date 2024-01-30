@@ -7,23 +7,23 @@ import "./Header.css";
 const template = () => `
   <h2>Welcome to my little world! 🐹</h2>
   <img
-    src="https://www.pngall.com/wp-content/uploads/14/Cute-No-Background.png"
+    src="https://play-lh.googleusercontent.com/2eZns9LsV9PbOmEE0iAD5vcznn4W3ctI0WrwioAkkyBB1c2026g3trX_wVqCJ_tiPRk"
     alt="title hub game website (app)"
     class="logo"
   />
   <nav>
     <img
-      src="https://res.cloudinary.com/dq186ej4c/image/upload/v1682684561/changeColor_tat29q.png"
+      src="https://cdn-icons-png.flaticon.com/512/1157/1157969.png"
       alt=" change to style mode page"
       id="changeColor"
     />
     <img
-      src="https://res.cloudinary.com/dq186ej4c/image/upload/v1682685633/home_nekvs0.png"
+      src="https://cdn-icons-png.flaticon.com/512/6134/6134689.png"
       alt=" navigate to home app"
       id="buttonDashboard"
     />
     <img
-      src="https://res.cloudinary.com/dq186ej4c/image/upload/v1682679055/logout_arz0gw.png"
+      src="https://cdn-icons-png.flaticon.com/512/3094/3094700.png"
       alt="logout"
       id="buttonLogout"
     />
