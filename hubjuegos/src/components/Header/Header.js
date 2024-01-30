@@ -5,7 +5,6 @@ import "./Header.css";
 
 //Hay un template o se crea una nueva función con createElement.
 const template = () => `
-  <h2>Welcome to my little world! 🐹</h2>
   <img
     src="https://play-lh.googleusercontent.com/2eZns9LsV9PbOmEE0iAD5vcznn4W3ctI0WrwioAkkyBB1c2026g3trX_wVqCJ_tiPRk"
     alt="title hub game website (app)"

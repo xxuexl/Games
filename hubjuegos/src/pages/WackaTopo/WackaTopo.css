@@ -14,13 +14,13 @@ h1 {
 
 #score, #timer {
     font-size: 24px;
-    margin-top: 18px;
+    margin-top: 8px;
 }
 
 #startButton { 
     display: block;
     padding: 10px 25px;
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 19px;
     cursor: pointer;
     text-align: center;
@@ -48,7 +48,7 @@ h1 {
 
 #endButton { 
     display: block;
-    margin-top: 20px;
+    margin-top: 15px;
     padding: 10px 25px;
     font-size: 20px;
     cursor: pointer;
@@ -78,10 +78,9 @@ h1 {
 .game-container { 
     background-image: url("https://img.freepik.com/premium-vector/archeology-bones-soil-layers-buried-fossil-animals-dinosaur-skeleton-bone-dirt-underground-clay-layer-vector-illustration_102902-531.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699228800&semt=ais");
 	background-repeat: no-repeat;
-    background-size:120%;
+    background-size:160%;
     background-position: 0px -105px;
     display: grid; 
-    width: 43% ;
     margin-top: 20px;
     margin-bottom: 10px;
     justify-content: center;
@@ -96,8 +95,8 @@ h1 {
 .hole { 
 	height: 124px; 
 	background-image: url("https://static.vecteezy.com/system/resources/previews/023/669/387/non_2x/big-hole-in-ground-brown-dry-soil-and-mine-element-of-desert-landscape-cartoon-illustration-vector.jpg"); 
-	background-size: 200px 174px ;
-    background-position: -15px -40px;
+	background-size: 200px 230px ;
+    background-position: center;
     background-repeat: no-repeat;
     border: 5px; 
 	cursor: pointer; 
